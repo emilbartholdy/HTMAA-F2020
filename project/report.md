@@ -95,3 +95,9 @@ You can add references, but they are not needed. (All the parts used in your pro
 * Are we supposed to create a report of the project? What should that report contain?
   * Yes...
 * Feedback on project: Ask Andres.
+
+
+Compiling the report
+```
+pandoc -H disable_float.tex --toc -s -V geometry:margin=0.75in -o report.pdf report.md
+```
