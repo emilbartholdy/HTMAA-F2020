@@ -28,16 +28,18 @@ https://arthurguy.co.uk/blog/2014/2/laser-engraver-cutter-build-log-part-1
 * Plant lights
 * Control of air moisture
 * Addition of fertilizer
+
 ---
+
 
 # Introduction  
 What is the motivation to build your device? Why is this important (at least to you)?
 
 * Both of us are interested in horticulture.
 * Watering plants correctly can be a challenge: Both over and under watering the plants will kill them.
-* We wish to 
+* We wish to build a box that automates the process of watering plants as to not kill them.
 
-# Background 
+# Background
 Has this been done before? How? If not, what's the closest related device/prototype? Is there any novelty in your device? (It is not necessary that your device is novel) Did you use an existing project as inspiration or starting point?
 
 * Self-watering planters have been done. Mostly without electronics:
@@ -50,11 +52,10 @@ What are the requirements or specifications? What are the capabilities that your
 * When pots are dry they device will water the appropriate dry pot. (Different plants / sized pots dry differently)
 
 Extensions to the requirements (if time allows):
-* The devices gives the plants an appropriate amount of light within some time box.
-* The controls the moisture in the air for the plants.
+* The device gives the plants an appropriate amount of light within some time box.
+* The controls the moisture in the air.
 
 # Description - Your device
-
 How does your device work? Describe in as much detail as you can fit into the report. It should contain three subsections: Mechanics, Electronics and Software/Firmware. Describe also what alternatives you analyzed for the different parts of your device. Why did you select the alternative that you finally used?
 
 An overview of the entire device can be seen in the sketch below:
@@ -69,6 +70,7 @@ D. The bottom layer containing the electronics.
 
 ## Part B:
 This part will be the most complicated one. It is briefly described below:
+
 ![The most significant mechanism of the device](figs/platform-mechanism.png)
 
 * The 3d-printer inspired mechanism can move a platform along the x and y axis (see figure above)
@@ -97,7 +99,7 @@ You can add references, but they are not needed. (All the parts used in your pro
 * Feedback on project: Ask Andres.
 
 
-Compiling the report
+# Compiling the report
 ```
 pandoc -H disable_float.tex --toc -s -V geometry:margin=0.75in -o report.pdf report.md
 ```
