@@ -97,9 +97,27 @@ You can add references, but they are not needed. (All the parts used in your pro
 * Are we supposed to create a report of the project? What should that report contain?
   * Yes...
 * Feedback on project: Ask Andres.
+  * One thing with different plants
+  * Maximum of water: and if sensor does not give a good result just stop.
+  * Have B. on the button of the plant
+    * Give more sunlight
+    * Be more beautiful
+    * Water will be transported through capilary of things.
+    * What should not be spilled at the electronics.
+    * Have part A.
+    * We need some reductions for the motors.
+      * Stepper motors: Considers stepper motors. To control where the hose is placed. For x- and y spots.
+      * Use an infrared sensor to detect distance. Use aluminum paper to make sure to get at strong signal.
+    * Hide the mechanism would be nice.
+
+Suggestions for the mechanism:
+  * Have it go around the edge
+  * Mechanism goes
+
 
 
 # Compiling the report
 ```
-pandoc -H disable_float.tex --toc -s -V geometry:margin=0.75in -o report.pdf report.md
+pandoc -H disable_float.tex --toc -s -V geometry:margin=1in -o report.pdf report.md
 ```
+

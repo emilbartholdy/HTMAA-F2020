@@ -1,0 +1,6 @@
+{
+    "board": "arduino:avr:uno",
+    "port": "/dev/tty.usbmodem14201",
+    "programmer": "arduino:arduinoisp",
+    "sketch": "project/stepper-motor.ino"
+}
