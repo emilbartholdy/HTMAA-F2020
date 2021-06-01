@@ -110,6 +110,11 @@ You can add references, but they are not needed. (All the parts used in your pro
       * Use an infrared sensor to detect distance. Use aluminum paper to make sure to get at strong signal.
     * Hide the mechanism would be nice.
 
+---
+
+  
+
+
 Suggestions for the mechanism:
   * Have it go around the edge
   * Mechanism goes
