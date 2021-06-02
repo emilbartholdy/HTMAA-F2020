@@ -17,7 +17,7 @@
             "includePath": [
                 "/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/cores/arduino",
                 "/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/variants/standard",
-                "/Users/emilbartholdy/Documents/Arduino/libraries/AccelStepper/src",
+                "/Users/almafreiesleben/Documents/Arduino/libraries/AccelStepper",
                 "/Applications/Arduino.app/Contents/Java/hardware/tools/avr/lib/gcc/avr/7.3.0/include",
                 "/Applications/Arduino.app/Contents/Java/hardware/tools/avr/lib/gcc/avr/7.3.0/include-fixed",
                 "/Applications/Arduino.app/Contents/Java/hardware/tools/avr/avr/include"

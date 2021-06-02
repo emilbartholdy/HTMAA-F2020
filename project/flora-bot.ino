@@ -103,7 +103,6 @@ void loop()
   
   if (false) {
     moveToXY(x1, y1);
-    delay(1000);
     moveToXY(-x1, -y1);
   }
 }
