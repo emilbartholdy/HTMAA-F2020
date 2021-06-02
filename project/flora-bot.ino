@@ -1,9 +1,5 @@
 #include <AccelStepper.h>
 
-// Box
-#define XBoxLength 800
-#define YBoxLength 500
-
 // Green
 #define stepPinX 3
 #define dirPinX 4
@@ -13,6 +9,12 @@
 #define dirPinY 6
 
 #define motorInterfaceType 1
+AccelStepper stepperX = AccelStepper(motorInterfaceType, stepPinX, dirPinX);
+AccelStepper stepperY = AccelStepper(motorInterfaceType, stepPinY, dirPinY);
+
+// Box
+#define XBoxLength 800
+#define YBoxLength 500
 
 /*
 The encoded positions in the box. 0 is the neutral position, with row and column equal to 0.
@@ -25,17 +27,21 @@ The encoded positions in the box. 0 is the neutral position, with row and column
 #define x1 (-XBoxLength / 6) * 3
 #define x2 (-XBoxLength / 6) * 5
 
-// Define some steppers and the pins the will use
-AccelStepper stepperX = AccelStepper(motorInterfaceType, stepPinX, dirPinX);
-AccelStepper stepperY = AccelStepper(motorInterfaceType, stepPinY, dirPinY);
+// soil moisture sensor
+const int sensor11Pin = A0;  
+const int limit = 300; 
 
 void setup()
 {  
+    Serial.begin(9600);
+
     stepperX.setMaxSpeed(1000);
     stepperX.setAcceleration(200.0);
     
     stepperY.setMaxSpeed(1000);
     stepperY.setAcceleration(200.0);
+
+    // TODO setup partitioning of box and appertaining sensors
 }
 
 void moveToXY(int x, int y) {
@@ -74,24 +80,30 @@ void moveToY(int y) {
   }
 }
 
-void loop()
-{  
-  delay(5000);
-  moveToXY(x0, y0);
-  moveToXY(-x0, -y0);
-  
-  moveToXY(x0, y1);
-  moveToXY(-x0, -y1);
-  
-  moveToXY(x1, y0);
-  moveToXY(-x1, -y0);
-  
-  moveToXY(x1, y1);
-  moveToXY(-x1, -y1);
-  
-  moveToXY(x2, y0);
-  moveToXY(-x2, -y0);
+boolean readMoistSensors(int pin) {
+  int sensorValue = analogRead(pin); 
 
-  moveToXY(x2, y1);
-  moveToXY(-x2, -y1);
+  Serial.println("Analog Value: ");
+  Serial.println(sensorValue);
+
+  boolean needWater = true;
+
+  if (sensorValue > limit) {
+    return needWater; 
+  } else {
+    return !needWater; 
+  }
+}
+
+void loop()
+{ 
+  delay(1000); 
+  boolean needWater = readMoistSensors(sensor11Pin);
+  Serial.println(needWater);
+  
+  if (false) {
+    moveToXY(x1, y1);
+    delay(1000);
+    moveToXY(-x1, -y1);
+  }
 }
