@@ -33,11 +33,9 @@ void setup()
 {  
     stepperX.setMaxSpeed(1000);
     stepperX.setAcceleration(200.0);
-    stepperX.setCurrentPosition(0);
     
     stepperY.setMaxSpeed(1000);
     stepperY.setAcceleration(200.0);
-    stepperY.setCurrentPosition(0);
 }
 
 void moveToXY(int x, int y) {
@@ -46,8 +44,8 @@ void moveToXY(int x, int y) {
 }
 
 void moveToX(int x) {
-  stepperX.moveTo(x);
-  stepperY.moveTo(x);
+  stepperX.move(x);
+  stepperY.move(x);
 
   boolean stop = false;
 
@@ -63,7 +61,7 @@ void moveToX(int x) {
 }
 
 void moveToY(int y) {
-  stepperY.moveTo(y);
+  stepperY.move(y);
   
   boolean stop = false;
 
@@ -80,15 +78,20 @@ void loop()
 {  
   delay(5000);
   moveToXY(x0, y0);
-  moveToXY(0, 0);
+  moveToXY(-x0, -y0);
+  
   moveToXY(x0, y1);
-  moveToXY(0, 0);
+  moveToXY(-x0, -y1);
+  
   moveToXY(x1, y0);
-  moveToXY(0, 0);
+  moveToXY(-x1, -y0);
+  
   moveToXY(x1, y1);
-  moveToXY(0, 0);
+  moveToXY(-x1, -y1);
+  
   moveToXY(x2, y0);
-  moveToXY(0, 0);
+  moveToXY(-x2, -y0);
+
   moveToXY(x2, y1);
-  moveToXY(0, 0);
+  moveToXY(-x2, -y1);
 }
